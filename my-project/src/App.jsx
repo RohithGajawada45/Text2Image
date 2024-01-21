@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css"; // Make sure your CSS file path is correct
 import Social from "./Social";
+import GlitchLoader from "./Glitchloader";
 
 export default function App() {
   const [imageSrc, setImageSrc] = useState(null);
@@ -80,12 +81,7 @@ export default function App() {
           <button className="bn29" onClick={handleButtonClick}>Imagine</button>
         </div>
         {loading && (
-          <div className="flex items-center justify-center my-10">
-            <div className="relative">
-              <div className="h-16 w-16 rounded-full border-t-8 border-b-8 border-yellow-200"></div>
-              <div className="absolute top-0 left-0 h-16 w-16 rounded-full border-t-8 border-b-8 border-orange-500 animate-spin"></div>
-            </div>
-          </div>
+          <GlitchLoader />
         )}
         {imageSrc && (
           <div className="flex flex-col justify-center items-center p-5 sm:pt-5">

@@ -5,7 +5,7 @@ export default function Social() {
     <div className="card">
       <span className="social-text">Hover Me</span>
 
-      <a className="social-link" href="#">
+      <a className="social-link" href="https://www.linkedin.com/in/rohith-gajawada-tech-intense/" target="_blank" rel="noopener noreferrer">
         <svg
           width="86px"
           height="86px"
@@ -32,10 +32,11 @@ export default function Social() {
       </a>
 
       <a
-        href="https://github.com"
+        href="https://github.com/RohithGajawada45"
         aria-label="Homepage"
         className="social-link"
         title="GitHub"
+        target="_blank" rel="noopener noreferrer"
       >
         <svg
           aria-hidden="true"
@@ -52,7 +53,7 @@ export default function Social() {
         </svg>
       </a>
 
-      <a href="YOUR_PORTFOLIO_URL" className="social-link">
+      <a href="https://rohithgajawada.vercel.app/" target="_blank" rel="noopener noreferrer" className="social-link">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100"

@@ -17,6 +17,7 @@ export default function App() {
           <Social />
         </div>
       </nav>
+      
     </div>
   );
 }

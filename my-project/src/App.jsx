@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css"; // Make sure your CSS file path is correct
 import Social from "./Social";
-import GlitchLoader from "./Glitchloader";
+import YourLoader from "./YourLoader";
 
 export default function App() {
   const [imageSrc, setImageSrc] = useState(null);
@@ -63,9 +63,9 @@ export default function App() {
           R45 AI
         </h1>
         <h3 className="lg:text-lg md:text-xl text-sm text-neutral-800 dark:text-neutral-200 font-semibold">
-  Transform your ideas into
-  <span className="text-pink-500 font-bold">  Reality</span>
-</h3>
+          Transform your ideas into
+          <span className="text-pink-500 font-bold"> Reality</span>
+        </h3>
         <br />
         <div className="flex flex-row justify-center items-center gap-10">
           <input
@@ -78,11 +78,11 @@ export default function App() {
             name=""
             id=""
           />
-          <button className="bn29" onClick={handleButtonClick}>Imagine</button>
+          <button className="bn29" onClick={handleButtonClick}>
+            Imagine
+          </button>
         </div>
-        {loading && (
-          <GlitchLoader />
-        )}
+        {loading && <YourLoader />}
         {imageSrc && (
           <div className="flex flex-col justify-center items-center p-5 sm:pt-5">
             <img
@@ -90,11 +90,18 @@ export default function App() {
               src={imageSrc}
               alt="Fetched Image"
             />
-            <button
-              className="m-5 z-10 ease-in border-2 border-pink-600"
-              onClick={handleSaveButtonClick}
-            >
-              Save Image
+            <button className="btn" style={{ marginBottom: "90px" }}>
+              <svg
+                height="24"
+                width="24"
+                fill="#FFFFFF"
+                viewBox="0 0 24 24"
+                data-name="Layer 1"
+                className="sparkle"
+              >
+                <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+              </svg>
+              <span className="text">Generate</span>
             </button>
           </div>
         )}

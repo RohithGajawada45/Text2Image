@@ -5,13 +5,13 @@ import YourLoader from "./YourLoader";
 
 export default function App() {
   const [imageSrc, setImageSrc] = useState(null);
-  const [input, setinput] = useState("Ram Mandir Temple");
-  const [loading, setloading] = useState(false);
+  const [input, setInput] = useState("Ram Mandir Temple");
+  const [loading, setLoading] = useState(false);
 
   const query = async (data) => {
     try {
       console.log("Fetching...");
-      setloading(true);
+      setLoading(true);
       const response = await fetch(
         "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0",
         {
@@ -23,13 +23,14 @@ export default function App() {
         }
       );
 
-      console.log("Got the res");
-      setloading(false);
+      console.log("Got the response");
       const result = await response.blob();
       const imageUrl = URL.createObjectURL(result);
       setImageSrc(imageUrl);
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -72,7 +73,7 @@ export default function App() {
             className="p-3 rounded"
             value={input}
             onChange={(e) => {
-              setinput(e.target.value);
+              setInput(e.target.value);
             }}
             type="text"
             name=""
@@ -83,7 +84,7 @@ export default function App() {
           </button>
         </div>
         {loading && <YourLoader />}
-        {imageSrc && (
+        {!loading && imageSrc && (
           <div className="flex flex-col justify-center items-center p-5 sm:pt-5">
             <img
               className="h-72 hover:scale-105 duration-300 rounded shadow-xl shadow-slate-800 drop-shadow-lg"

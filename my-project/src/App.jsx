@@ -36,8 +36,8 @@ export default function App() {
   const handleButtonClick = () => {
     query({ inputs: input });
   };
+
   const handleSaveButtonClick = () => {
-    // Implement logic to save the image, for example:
     const a = document.createElement("a");
     a.href = imageSrc;
     a.download = "image.jpg";
@@ -51,7 +51,7 @@ export default function App() {
           <div className="flex items-center">
             <div className="ml-2">
               <h1 className="text-3xl font-bold text-neutral-800 dark:text-neutral-200">
-                Text2Image
+                R45 AI
               </h1>
             </div>
           </div>
@@ -59,8 +59,8 @@ export default function App() {
         </div>
       </nav>
       <div className="flex flex-col gap-1 lg:pt-0 pt-12">
-        <h1 className=" animate-text bg-gradient-to-r from-pink-600 via-yellow-500 to-orange-500 bg-clip-text text-transparent lg:text-5xl md:text-6xl text-5xl font-black p-1">
-          R45 AI
+        <h1 className="animate-text bg-gradient-to-r from-pink-600 via-yellow-500 to-orange-500 bg-clip-text text-transparent lg:text-5xl md:text-6xl text-5xl font-black p-1">
+          Text2Image
         </h1>
         <h3 className="lg:text-lg md:text-xl text-sm text-neutral-800 dark:text-neutral-200 font-semibold">
           Transform your ideas into
@@ -90,7 +90,7 @@ export default function App() {
               src={imageSrc}
               alt="Fetched Image"
             />
-            <button className="btn" style={{ marginBottom: "90px" }}>
+            <button className="btn" style={{ marginBottom: "90px" }} onClick={handleSaveButtonClick}>
               <svg
                 height="24"
                 width="24"
@@ -101,7 +101,7 @@ export default function App() {
               >
                 <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
               </svg>
-              <span className="text">Generate</span>
+              <span className="text">Download</span>
             </button>
           </div>
         )}
